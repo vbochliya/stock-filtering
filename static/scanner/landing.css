@@ -1,0 +1,77 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+.navbar{
+    width: 100vw;
+    height: 3rem;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+.navbar ul{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar ul li{
+    margin: 0 1rem;
+    list-style: none;
+    
+}
+.navbar ul li:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+
+
+
+
+
+
+
+
+.scan-input{
+    margin-top: 1rem;
+    width: 100vw;
+}
+.scan-input form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.scan-input form h2{
+margin: 1rem 0;
+}
+.form-div{
+    width: 450px;
+    margin: .25rem 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+.indicators{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.indicators p{
+    width: 100vw;
+}
+.indicators label{
+    margin: .15rem .5rem;
+}
+.submit-btn{
+    width: 50px;
+    margin-top: 1rem;
+}

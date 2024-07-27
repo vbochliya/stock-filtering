@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Co-Researcher</title>
+  <link rel="stylesheet" href="{% static 'scanner/landing.css' %}">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <ul>
+      <li>Scan</li>
+    </ul>
+  </div>
+
+  <div class="scan-input">
+    <form method="post" action="/scan">
+      {% csrf_token %}
+      <h2>Scanning factors</h2>
+      <div class="price-change form-div">
+        <span>Price</span>
+        <input type="text" name="close_diff" placeholder="%change">
+        <input type="text" name="close_range" placeholder="from,upto #range">
+      </div>
+      <div class="volume-change form-div">
+        <span>Volume</span>
+        <input type="text" name="volume_diff" placeholder="%change">
+        <input type="text" name="volume_range" placeholder="from,upto #range">
+      </div>
+      <h2>Show factors</h2>
+      <div class="indicators">
+        <p><b>Indicators</b></p>
+        <label>
+          <input type="checkbox" name="indicator" value="sma">
+          Simple Moving Average (SMA)
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="ema">
+          Exponential Moving Average (EMA)
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="macd-histogram">
+          MACD Histogram
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="standard-deviation">
+          Standard Deviation
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="bollinger-bands">
+          Bollinger Bands
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="rsi">
+          Relative Strength Index (RSI)
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="roc">
+          Rate of Change (ROC)
+        </label>
+        <label>
+          <input type="checkbox" name="indicator" value="obv">
+          On-Balance Volume (OBV)
+        </label>
+      </div>
+
+
+
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+
+
+
+  <script src="{% static 'scanner/landing.js' %}"></script>
+</body>
+
+</html>

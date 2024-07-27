@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'scanner/scanned.css' %}">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <ul>
+            <li>Results</li>
+        </ul>
+    </div>
+
+    <div class="data">
+
+        <table>
+        <thead>
+            <tr>
+                <th>Sr</th>
+                <th>Date-time</th>
+                <th>Name</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Close_diff %</th>
+                <th>Volume</th>
+                <th>Volume_diff %</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in results %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ data.date_time }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.open }}</td>
+                <td>{{ data.high }}</td>
+                <td>{{ data.low }}</td>
+                <td>{{ data.close }}</td>
+                <td>{{ data.calculated_para.close_diff }}</td>
+                <td>{{ data.volume }}</td>
+                <td>{{ data.calculated_para.volume_diff }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+        
+        </table>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
